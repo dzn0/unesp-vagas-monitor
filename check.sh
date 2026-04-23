@@ -41,7 +41,9 @@ echo "CallMeBot HTTP $HTTP_CODE:"
 cat /tmp/callmebot.out
 echo
 
-if [[ "$HTTP_CODE" != "200" ]]; then
+# CallMeBot retorna 200 ou 203 no caminho feliz; tratamos qualquer 2xx
+# como sucesso de transporte e validamos o resultado pelo corpo abaixo.
+if [[ ! "$HTTP_CODE" =~ ^2[0-9][0-9]$ ]]; then
   echo "ERRO: CallMeBot retornou status $HTTP_CODE." >&2
   exit 1
 fi
