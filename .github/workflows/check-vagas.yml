@@ -1,0 +1,19 @@
+name: Checar vagas UNESP CC Pres. Prudente
+
+on:
+  schedule:
+    - cron: '7 12 * * *'   # 09:07 BRT (manhã) — UTC = BRT + 3
+    - cron: '7 23 * * *'   # 20:07 BRT (noite)
+  workflow_dispatch:        # botão "Run workflow" manual no GitHub
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rodar verificação e enviar WhatsApp
+        env:
+          CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
+          CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+        run: bash check.sh
