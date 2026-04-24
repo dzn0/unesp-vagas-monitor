@@ -29,9 +29,9 @@ NORMALIZED=$(printf '%s' "$HTML" | iconv -f utf-8 -t ascii//TRANSLIT 2>/dev/null
 NOW_BRT=$(TZ=America/Sao_Paulo date '+%d/%m %H:%M')
 
 if grep -q "transferencia externa" <<< "$NORMALIZED"; then
-  MSG="🎯 VAGA UNESP! Apareceu Transferência Externa na página. Verifique se inclui Ciência da Computação em Pres. Prudente: ${URL} (checado às ${NOW_BRT} BRT)"
+  MSG="🎯 UNESP: apareceu Transferência Externa na página — abra pra ver quais cursos/campi estão contemplados: ${URL} (checado às ${NOW_BRT} BRT)"
 else
-  MSG="UNESP CC PP: sem Transferência Externa hoje. Checado às ${NOW_BRT} BRT."
+  MSG="UNESP: sem Transferência Externa hoje. Checado às ${NOW_BRT} BRT."
 fi
 
 echo "Mensagem: $MSG"
