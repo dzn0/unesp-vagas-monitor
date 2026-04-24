@@ -37,6 +37,10 @@ No GitHub: **Settings → Secrets and variables → Actions → New repository s
 |------|-------|
 | `CALLMEBOT_PHONE` | seu telefone (ex.: `5518999998888`) |
 | `CALLMEBOT_APIKEY` | a API key que o CallMeBot te mandou |
+| `CALLMEBOT_PHONE_2` *(opcional)* | telefone de um segundo destinatário |
+| `CALLMEBOT_APIKEY_2` *(opcional)* | API key **do segundo destinatário** (cada número tem a sua) |
+
+> Para adicionar um segundo destinatário (ex.: um amigo), ele precisa repetir o **passo 1** no WhatsApp dele e receber a própria API key. Sem os dois secrets `_2`, o script envia só para o primeiro número.
 
 ### 4. Testar
 

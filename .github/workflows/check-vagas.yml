@@ -16,4 +16,6 @@ jobs:
         env:
           CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
           CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+          CALLMEBOT_PHONE_2: ${{ secrets.CALLMEBOT_PHONE_2 }}
+          CALLMEBOT_APIKEY_2: ${{ secrets.CALLMEBOT_APIKEY_2 }}
         run: bash check.sh
